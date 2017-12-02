@@ -3,7 +3,8 @@
 
      $("#topics").on("click", function() {
       // Stores a random static  API key.
-      var queryURL = "https://api.giphy.com/v1/gifs?api_key=RrOdcCds1SXzLGzzVKauPSyeG1jwlTtI&gif_ids=";
+      var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=RrOdcCds1SXzLGzzVKauPSyeG1jwlTtI&q=unicorns&limit=10&offset=0&rating=G&lang=en";
+     
       //Creating an array of strings, each one related to a topic that interests Save it to a variable called `topics`.  make a list to your own liking.
       var buttons = ["topics"];
     // Performing GET requests to the OMDB API and logging the responses to the console
@@ -26,6 +27,8 @@
       var topics = $("<img>");
 
       // Gives the path of image src, alt gives description of image
+
+
         topics.attr("src", imageUrl);
         topics.attr("alt", "topics image");
 
@@ -61,3 +64,4 @@ for (var i = 0; i < topics.length; i++) {
           $("#topics-view").append(a);
         }
       }
+
