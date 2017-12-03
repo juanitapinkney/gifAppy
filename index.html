@@ -1,45 +1,33 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset="utf-8">
-			<title>giphy pages</title>
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-	</head>
+<html lang="en">
 
-	<body>
-		 <div class="container">
-          <h1>Mystical Creatures</h1>
+<head>
+  <meta charset="utf-8">
+  <title>Beautiful Beach</title>
 
-		 
-			<div class="buttons">
-				<button class="unicorns-button" src="https://api.giphy.com/v1/gifs/search?api_key=RrOdcCds1SXzLGzzVKauPSyeG1jwlTtI&q=unicorns&limit=10&offset=0&rating=G&lang=en">Unicorns</button>
-				<button class="fairies-button"  src="https://api.giphy.com/search/faires">Fairies</button>
-				<button class="leprechauns-button" src="https://api.giphy.com/search/leprechauns">Leprechauns</button>
-      </div>
-				
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript"></script>
+</head>
 
-			 <div id="container">
-        <h1>Topic Search</h1>
+<body>
 
-        <!-- We'll be dumping our JSON contents in here -->
-        <div id="topic-view"></div>
-
-        <!-- This form will be where users input data about the topics -->
-        <form id="topic-form">
-          <label for="topic-input">Search for a topic</label>
-          <input type="text" id="topic-input"><br>
-
-          <!-- This button will trigger our AJAX call -->
-          <input id="find-topic" type="submit" value="topic Search">
-        </form>
-
-				 <img src="https://giphy.com/search/unicorns" data-still="https://media3.giphy.com/media/W6LbnBigDe4ZG/200_s.gif" data-animate="https://media3.giphy.com/media/W6LbnBigDe4ZG/200.gif" data-state="still" class="gif">
+  <div class="container">
+    <h1>Beautiful Beach Search</h1>
 
 
 
+    <!-- Beach will get dumped here -->
+    <div id="beach-view"></div>
 
-		    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		    <script type="text/javascript"></script>
+    <form id="beach-form">
+      <label for="beach-input">Add a beach </label>
+      <input type="text" id="beach-input"><br>
 
-	</body>
+      <!-- Button triggers new beach to be added -->
+      <input id="add-beach" type="submit" value="Submit">
+    </form>
+
+
+</body>
+
 </html>
