@@ -1,33 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+    <meta charset="utf-8">
+      <title>Beautiful Beach</title>
 
-<head>
-  <meta charset="utf-8">
-  <title>Beautiful Beach</title>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript"></script>
-</head>
-
+    <head>
+        <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+          
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript"></script>  
+      
+    </head>
 <body>
 
-  <div class="container">
-    <h1>Beautiful Beach Search</h1>
+        <h1>Beautiful Beach Search</h1>
 
+<!-- // Bootstrap large button group here.
+-->   <div class="beach">
+        <ul>
+        <button class="mexico" type="button" aria-haspopup="true" aria-expanded="false">Mexico <span class="caret"></span>
 
+        <button class="jamaica" type="button" aria-haspopup="true" aria-expanded="false">Jamaica <span class="caret"></span>
+      
+        <button class="carribean" type="button" aria-haspopup="true" aria-expanded="false">Carribean <span class="caret"></span>
+        
+        <button class="hawaii" type="button" aria-haspopup="true" aria-expanded="false">Hawaii <span class="caret"></span>
+            
+        <button class="aruba" type="button" aria-haspopup="true" aria-expanded="false">Aruba <span class="caret"></span>
+             
+        <button class="bora_bora" type="button" aria-haspopup="true" aria-expanded="false">Bora Bora <span class="caret"></span>
+             
+        <button class="malibu" type="button" aria-haspopup="true" aria-expanded="false">Malibu <span class="caret"></span>
+             
+        <button class="key_largo" type="button" aria-haspopup="true" aria-expanded="false">Key Largo <span class="caret"></span>
+        </button>
+        </ul>
+    </div>
+<script href="https://api.giphy.com/v1/gifs/search?q=beautiful+calm+beaches&api_key=LtNoa2bzwYtqkpZxaDXpeu2arbF0VDx3&&limit=10&offset=0&rating=G&lang=en&fmt=json"></script>
 
-    <!-- Beach will get dumped here -->
-    <div id="beach-view"></div>
+      <!-- Beaches will get dumped here and button triggers new beach to be added -->
+      <div id="beach-view"></div>
 
-    <form id="beach-form">
-      <label for="beach-input">Add a beach </label>
-      <input type="text" id="beach-input"><br>
-
-      <!-- Button triggers new beach to be added -->
-      <input id="add-beach" type="submit" value="Submit">
-    </form>
+      <form id="beach-form">
+        <label for="beach-input">Search for a beach here!</label>
+        <input type="text" id="beach-input"><input id="add-beach" type="submit" value="Submit">
+      </form>
 
 
 </body>
-
 </html>
