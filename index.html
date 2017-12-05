@@ -27,15 +27,19 @@
     </div>
 
 <!-- //Beaches will get dumped here -->
-        <div id="beaches-view"></div>
+        <div id="beaches-view">
         <form id="beaches-form">
           <label for="beaches-input">Search for beaches here!</label>
           <input type="text" id="beaches-input">
+    
+          <img id="searchResults" src="https://api.giphy.com/v1/gifs/search?q=" + beaches +  "&api_key=LtNoa2bzwYtqkpZxaDXpeu2arbF0VDx3&&limit=10&offset=0&rating=G&lang=en&fmt=json"/>
+        </div>
 
 <!-- //Button triggers new beaches to be added -->
            <input id="add-movie" type="submit" value="Submit">
         </form>
 
+      
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="./assets/javascript/giphy.js"></script>
