@@ -1,13 +1,12 @@
-* {
-	margin: 20;
-	padding: 20;
-	box-sizing: border-box;
+body {
+	background:lightblue;
 }
 
 h1 {
 	text-align: left;
 	font-weight: 30px;
 	font-size: 50px;
+	color:blue;
 }
 
 img {
@@ -16,17 +15,13 @@ img {
 	max-height: 100%;
 }
 
-body {
-	background-color: skyblue;
 
-	color: blue;
-}
 
-text {
-
-}
 
 button {
+	background-color: transparent;
+
+
 
 }
 
