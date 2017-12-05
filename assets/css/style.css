@@ -5,6 +5,12 @@
   font-size: 20px;
 }
 
+<<<<<<< HEAD
+=======
+body {
+	background-image: url ("./assets/images/paradise.jpg");
+}
+>>>>>>> d1e3b2eda4e29197cbd58c2a70fb6eb08e1d19f9
 
 h1 {
 	text-align: center;
