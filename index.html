@@ -6,46 +6,37 @@
     <head>
         <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
         <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-          
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript"></script>  
-      
     </head>
 <body>
 
         <h1>Beautiful Beaches</h1>
 
-<!-- // Bootstrap large button group here.
--->   <div class="beach">
-        <ul>
-        <button class="mexico" type="button" aria-haspopup="true" aria-expanded="false">Mexico <span class="caret"></span>
 
-        <button class="jamaica" type="button" aria-haspopup="true" aria-expanded="false">Jamaica <span class="caret"></span>
-      
-        <button class="carribean" type="button" aria-haspopup="true" aria-expanded="false">Carribean <span class="caret"></span>
-        
-        <button class="hawaii" type="button" aria-haspopup="true" aria-expanded="false">Hawaii <span class="caret"></span>
-            
-        <button class="aruba" type="button" aria-haspopup="true" aria-expanded="false">Aruba <span class="caret"></span>
-             
-        <button class="bora_bora" type="button" aria-haspopup="true" aria-expanded="false">Bora Bora <span class="caret"></span>
-             
-        <button class="malibu" type="button" aria-haspopup="true" aria-expanded="false">Malibu <span class="caret"></span>
-             
-        <button class="key_largo" type="button" aria-haspopup="true" aria-expanded="false">Key Largo <span class="caret"></span>
-        </button>
+     <div class="beach">
+        <ul>
+        <button class="beach" type="button">Mexico</button>
+        <button class="beach" type="button">Jamaica</button>
+        <button class="beach" type="button">Carribean</button>
+        <button class="beach" type="button">Hawaii</button>
+        <button class="beach" type="button">Aruba</button>
+        <button class="beach" type="button">Bora Bora</button>
+        <button class="beach" type="button">Belize</button>
+        <button class="beach" type="button">Key Largo</button>
         </ul>
     </div>
 
+<!-- //Beaches will get dumped here -->
+        <div id="beaches-view"></div>
+        <form id="beaches-form">
+          <label for="beaches-input">Search for beaches here!</label>
+          <input type="text" id="beaches-input">
 
-      <!-- Beaches will get dumped here and button triggers new beach to be added -->
-      <div id="beaches-view"></div>
+<!-- //Button triggers new beaches to be added -->
+           <input id="add-movie" type="submit" value="Add a Movie Bro">
+        </form>
 
-      <form id="beaches-form">
-        <label for="beaches-input">Search for beaches here!</label>
-        <input type="text" id="beaches-input"><input id="add-beaches" type="submit" value="Submit">
-      </form>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript"></script>
 
 </body>
 </html>
