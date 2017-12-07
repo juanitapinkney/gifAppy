@@ -6,40 +6,36 @@
     <head>
         <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
         <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-        <link rel="stylesheet" type="text/css" href="./assets/images/paradise.jpg">
     </head>
 <body>
-
         <h1>Beautiful Beaches</h1>
 
+                  
+            <div id="images">
+                <button id="Mexico">Mexico</button>
+              
+                <button id="Jamaica">Jamaica</button>
+              
+                <button id="Hawaii">Hawaii</button>
+              
+                <button id="Aruba">Aruba</button>
+             
+                <button id="Belize">Belize</button>
+            
+                <button id="Brazil">Brazil</button>
+              
+                <button id="CapeTown">Cape Town</button>
+             
+                <button id="BoraBora">Bora Bora</button>
+              
+                <button id="KeyLargo">KeyLargo</button>   
+            </div>
 
-     <div class="beach">
-    
-        <button class="beach" type="button">Mexico</button>
-        <button class="beach" type="button">Jamaica</button>
-        <button class="beach" type="button">Carribean</button>
-        <button class="beach" type="button">Hawaii</button>
-        <button class="beach" type="button">Aruba</button>
-        <button class="beach" type="button">Bora Bora</button>
-        <button class="beach" type="button">Belize</button>
-        <button class="beach" type="button">Key Largo</button>
-    
-    </div>
-
-<!-- //Beaches will get dumped here -->
-        <div id="beaches-view">
-        <form id="beaches-form">
-          <label for="beaches-input">Search for beaches here!</label>
-          <input type="text" id="beaches-input">
-    
-          <img id="searchResults" src="https://api.giphy.com/v1/gifs/search?q=" + beaches +  "&api_key=LtNoa2bzwYtqkpZxaDXpeu2arbF0VDx3&&limit=10&offset=0&rating=G&lang=en&fmt=json"/>
-        </div>
-
-<!-- //Button triggers new beaches to be added -->
-           <input id="add-movie" type="submit" value="Submit">
-        </form>
-
-      
+            <div id="buttons-view">
+              <form id="beaches-form"> <br>
+                <input class="input" id="formValueId" type="text" placeholder="search for a beach..."/>
+                </form>
+            </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="./assets/javascript/giphy.js"></script>
