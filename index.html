@@ -1,44 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-    <meta charset="utf-8">
+   <head>
+      <meta charset="UTF-8">
       <title>Beautiful Beaches</title>
-
-    <head>
-        <link rel="stylesheet" type="text/css" href="./assets/css/reset.css">
-        <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
-    </head>
-<body>
-        <h1>Beautiful Beaches</h1>
-
-                  
-            <div id="images">
-                <button id="Mexico">Mexico</button>
-              
-                <button id="Jamaica">Jamaica</button>
-              
-                <button id="Hawaii">Hawaii</button>
-              
-                <button id="Aruba">Aruba</button>
-             
-                <button id="Belize">Belize</button>
-            
-                <button id="Brazil">Brazil</button>
-              
-                <button id="CapeTown">Cape Town</button>
-             
-                <button id="BoraBora">Bora Bora</button>
-              
-                <button id="KeyLargo">KeyLargo</button>   
-            </div>
-
-            <div id="buttons-view">
-              <form id="beaches-form"> <br>
-                <input class="input" id="formValueId" type="text" placeholder="search for a beach..."/>
-                </form>
-            </div>
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript" src="./assets/javascript/giphy.js"></script>
-
-</body>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+   </head>
+   <body>
+      <h1><strong>Beautiful Beaches</strong></h1>
+      <br>
+      <div class="button">
+         <button class="addBtn">Aruba</button>
+         <button class="addBtn">Belize</button>
+         <button class="addBtn">Bora Bora</button>
+         <button class="addBtn">Brazil</button>
+         <button class="addBtn">Cape Town</button>
+         <button class="addBtn">Jamaica</button>
+         <button class="addBtn">Key Largo</button>
+         <button class="addBtn">Hawaii</button>
+         <button class="addBtn">Mexico</button>
+         <input onclick="newElement()" type="text" placeholder="Search beaches..."></input>
+      </div>
+      <div id="image"> </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script type="text/javascript" src="./assets/javascript/giphy.js"></script>
+   </body>
 </html>

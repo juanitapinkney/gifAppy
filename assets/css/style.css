@@ -1,46 +1,50 @@
-	body {
-	      background-image: url("https://static.pexels.com/photos/457882/pexels-photo-457882.jpeg");
-	      background-repeat: no-repeat;
-	      background-attachment: fixed;
-	      background-position: center; 
-	}
+body{
+	background-image: url('../images/beachsunset.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
-
-	h1 {
-
+h1 {
 	text-align: center;
-	font-weight: 30px;
-	font-size: 60px;
-	color: blue;
-	padding-top: 70px;
-	padding-bottom: 30px;  
+	font-weight: 10px;
+	font-size: 40px;
+	color: black;
+}
 
-	}
-
-
-	div {
-
+div {
 	background-color: transparent;
 	text-align: center;
-	font-weight: 50px;
-	font-size: 50px;
-	color:white;
+	font-weight: 10px;
+	font-size: 30px;
+	color: black;
+}
 
-	}
+button {
+	background-color: transparent;
+	border-color: black;
+	text-align: center;
+	font-weight: 10px;
+	font-size: 20px;
+	color: black;
+}
 
-	button {
-
-		font-size: 20px;
-		background-color: transparent;
-		color: blue;
-	}
 
 
 
-	input {
-		text-align: center;
-		font-size: 20px;
-		color: grey;
-		margin: center;
+.addBtn {
+	background-color: transparent;
+	border-color: black;
+	text-align: center;
+	font-weight: 10px;
+	font-size: 20px;
+	color: black;
+}
 
-	}
+input {
+	background-color: transparent;
+	border-color: black;
+	text-align: center;
+	font-weight: 10px;
+	font-size: 20px;
+	color: black;
+}
