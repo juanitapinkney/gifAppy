@@ -1,102 +1,92 @@
-var GiphyAPI = LtNoa2bzwYtqkpZxaDXpeu2arbF0VDx3;
+var API = api_key=LtNoa2bzwYtqkpZxaDXpeu2arbF0VDx3;
 var url = json.data[0].images.downsized.url;
 // Initial array of beaches
 var beaches = ["Mexico", "Jamaica", "Hawaii", "Aruba", "Belize", "Brazil", "Cape Town", "Bora Bora",
-  "Key Largo"];
+"Key Largo"];
 $(document).ready(function() {
-    $("button").click(function() {
-        ajaxCall();
-    });
+$("button").click(function() {
+ajaxCall();
 });
-$(document).on("click", "img", function() {
-    var img = $(this);
-    var src = img.attr("src");
-    // make if then statement to have function image
-    // if this original url i.e. animated gif, swap for still image
-    if (src === img.attr("data-original-url")) {
-        img.attr("src", img.attr("data-still-url"));
-    } else {
-        // else statement: make it animate since it stopped
-        img.attr("src", img.attr("data-original-url"));
-    }
 });
-var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + beaches +
-    "&api_key=LtNoa2bzwYtqkpZxaDXpeu2arbF0VDx3&&limit=10&offset=0&rating=G&lang=en&fmt=json";
-$.ajax({
-    url: queryURL,
-    method: 'GET'
-    // call back function
-}).done(function(response) {
-    console.log(response);
-    // clear the images since I have new images
-    $("#images").empty();
-    // to use the data from giphy, I need to write code in the done callback
-    for (var i = 0; i < response.data.length; i++) {
-        console.log(response.data[i].rating);
-        // console log to find info on still and animated
-        console.log(response.data[i].images.original_still.url);
-        console.log(response.data[i].images.original.url);
-        // create new image tag for the images to be called to the page
-        var imageAndRating = $("<div>"); // create div
-        var rating = $("<p>"); // create paragraph inside div to contain both rating and image
-        rating.html("Rating: " + response.data[i].rating); // HTML rating
-        imageAndRating.append(rating); // append the rating and imageandrating div together
-        var newImage = $("<img>"); // create image tag for images to prepared to display
-        newImage.attr("src", response.data[i].images.original_still.url);
-        newImage.attr("data-original-url", response.data[i].images.original.url);
-        newImage.attr("data-still-url", response.data[i].images.original_still.url);
-        imageAndRating.append(newImage);
-        // add image to page
-        $("#images").append(imageAndRating);
-    }
-});
+
+
+
 // Event listener for our beach-button
 $("#beach-button").on("click", function() {
-    // Storing our giphy API URL for a random beach image
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + beaches +
-        "&api_key=LtNoa2bzwYtqkpZxaDXpeu2arbF0VDx3&&limit=10&offset=0&rating=G&lang=en&fmt=json";
-    // Perfoming an AJAX GET request to our queryURL
-    $.ajax({
-            url: queryURL,
-            method: "GET"
-        })
-        // After the data from the AJAX request comes back
-        .done(function(response) {
-            // Saving the image_original_url property
-            var imageUrl = response.data.image_original_url;
-            // Creating and storing an image tag
-            var beachImage = $("<img>");
-            // Setting the beachImage src attribute to imageUrl
-            beachImage.attr("src", imageUrl);
-            beachImage.attr("alt", "beach image");
-            // Prepending the beachImage to the images div
-            $("#images").prepend(beachImage);
-        });
+// Storing our giphy API URL for a random beach image
+var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + beaches +
+"&api_key=LtNoa2bzwYtqkpZxaDXpeu2arbF0VDx3&&limit=10&offset=0&rating=G&lang=en&fmt=json";
+// Perfoming an AJAX GET request to our queryURL
+$.ajax({
+url: queryURL,
+method: "GET"
+})
+// After the data from the AJAX request comes back
+.done(function(response) {
+// Saving the image_original_url property
+var imageUrl = response.data.image_original_url;
+// Creating and storing an image tag
+var beachImage = $("<div>");
+// Setting the beachImage src attribute to imageUrl
+beachImage.attr("src", imageUrl);
+beachImage.attr("alt", "beach image");
+// Prepending the beachImage to the images div
+$("#image").prepend(beachImage);
 });
-// This function handles events where one button is clicked
+});
+
+
+//Storing data
+var results = response.data;
+//Creating a loop for data, b/c data is an array to display 
+for (var i = 0; i < results.length; i++) {
+//Creating a div with a class of 'item' and store into variable
+var gifDiv = $("<div class='item'>");
+//Storing the rating from results, accessing index of results array, access specific property and storing
+var rating = results[i].rating;
+//Creating paragraph tag for later use in variable "<p>", selecting is just "p"
+var p = $("<p>").text("Rating: " + rating);
+var beachImage = $("<img>");
+//Fixed height is part of the property to access
+beachImage.attr("src", results[i].images.fixed_height.url);
+gifDiv.prepend(beachImage);
+//Access existing gifs from DOM to prepend and make it show onto the page
+$("#gifs-appear-here").prepend(gifDiv);
+}
+
+
+// This function handles events when button is clicked
 $("#add-beaches").on("click", function(event) {
-    event.preventDefault();
+event.preventDefault();
 });
 $("#addSearchBtn").on("click", function() {
-    // user function to add button to list of buttons
-    // create new button
-    var newBtn = $(" < button > ");
-    var searchText = $("#searchText").val();
-    newBtn.text(searchText);
-    // prepend to body
-    $(".container").prepend(newBtn);
+// Function to add new button to list of buttons
+var newBtn = $(" <button> ");
+var searchText = $("#searchText").val();
+newBtn.text(searchText);
+// Prepend gif image to body
+$(".gifDiv").prepend(newBtn);
 });
 
 
-$("#searchResults").append(' Rating: '+rating+'');
+
+var state = $(this).attr("data-state");
+console.log(this);
+
+if(state === "still"){
+$(this).attr("src", $(this).attr("data-animate"));
+$(this).attr("data-state", "animate");
+} else{
+$(this).attr("src", $(this).attr("data-still"));  
+$(this).attr("data-state", "still");
+}
 
 
 
 
 
-
-
-
+// clear the images since I have new images
+$("#image").empty();
 
 
 
