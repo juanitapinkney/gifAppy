@@ -1,16 +1,17 @@
 body{
-	background-image: url('../images/beachsunset.jpg'); 
+	background-image: url('../images/remote.jpg'); 
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: right right;
+    background-position: left left center;
 }
 
 h1 {
 	text-align: center;
     font-family: sans-serif;
 	font-size: 40px;
-	color: white;
-	padding-top: 250px;
+	color: grey;
+	padding-top: 100px;
+	
 }
 
 div {
@@ -18,7 +19,7 @@ div {
 	text-align: center;
 	font-family: sans-serif;
 	font-size: 20px;
-	color: white;
+	color: grey;
 }
 
 button {
@@ -27,7 +28,7 @@ button {
 	text-align: center;
     font-family: sans-serif;	
 	font-size: 20px;
-	color: white;
+	color: grey;
 }
 .addBtn {
 	background-color: transparent;
