@@ -1,47 +1,100 @@
-var API = api_key = LtNoa2bzwYtqkpZxaDXpeu2arbF0VDx3;
-var url = json.data[0].images.downsized.url;
-// Initial array of beaches
-var beaches = ["Mexico", "Jamaica", "Hawaii", "Aruba", "Belize", "Brazil", "Cape Town", "Bora Bora", "Key Largo"];
-//Listening for click event on button
-$("button").on("click", function() {
-    // Storing the value of "data-beach" from the button which was clicked
+$(document).ready(function() {
+  // Initial array of beaches
+  var beaches = [
+    "Mexico",
+    "Jamaica",
+    "Hawaii",
+    "Aruba",
+    "Belize",
+    "Brazil",
+    "Cape Town",
+    "Bora Bora",
+    "Key Largo"
+  ];
+
+  // Adding click event listen listener to all buttons
+  $("button").on("click", function(event) {
+    // Grabbing and storing the data-beach property value from the button
+    event.preventDefault();
     var beach = $(this).attr("data-beach");
-    console.log(this);
-    //Running query URL
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q="
-    "&api_key=LtNoa2bzwYtqkpZxaDXpeu2arbF0VDx3&&limit=10&offset=0&rating=G&lang=en&fmt=json";
+
+    // Constructing a queryURL using the beach name
+    var queryURL =
+      "http://api.giphy.com/v1/gifs/search?q=" +
+      beach +
+      "&api_key=LtNoa2bzwYtqkpZxaDXpeu2arbF0VDx3&&limit=10";
+
+    // Performing an AJAX request with the queryURL
     $.ajax({
-        url: queryURL,
-        method: "GET"
-    }).done(function(response) {
-        //Storing data
+      url: queryURL,
+      method: "GET"
+    })
+      // After data comes back from the request
+      .done(function(response) {
+        console.log(queryURL);
+
+        console.log(response);
+        // storing the data from the AJAX request in the results variable
         var results = response.data;
-        //Creating a loop for data, b/c data is an array to display 
+
+        // Looping through each result item
         for (var i = 0; i < results.length; i++) {
-            //Creating a div with a class of 'item' and store into variable
-            var gifDiv = $("<div class='item'>");
-            //Storing the rating from results, accessing index of results array, access specific property and storing
-            var rating = results[i].rating;
-            //Creating paragraph tag for later use in variable "<p>", selecting is just "p"
-            var p = $("<p>").text("Rating: " + rating);
-            //Creating image called personImage, add attribute here to add the source to the image tag
+          if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
+            // Creating and storing a div tag
+            var beachDiv = $("<div>");
+
+            // Creating a paragraph tag with the result item's rating
+            var p = $("<p>").text("Rating: " + results[i].rating);
+
+            // Creating and storing an image tag
             var beachImage = $("<img>");
-            //Fixed height is part of the property to access
+            // Setting the src attribute of the image to a property pulled off the result item
             beachImage.attr("src", results[i].images.fixed_height.url);
-            //Adding "p" tag created above
-            gifDiv.prepend(p);
-            gifDiv.prepend(beachImage);
-            //Access existing gifs from DOM to prepend and make it show onto the page
-            $("#gifs-appear-here").render(gifDiv);
+            beachImage.attr("data-animate", results[i].images.fixed_height.url);
+            beachImage.attr(
+              "data-still",
+              results[i].images.fixed_height_still.url
+            );
+            beachImage.attr("data-state", "animate");
+
+            // Appending the paragraph and image tag to the beachDiv
+            beachDiv.append(p);
+            beachDiv.append(beachImage);
+
+            // Prependng the beachDiv to the HTML page in the "#gifs-appear-here" div
+            $("#gifs-appear-here").prepend(beachDiv);
+          }
         }
-    });
+      });
+  });
+
+  $(document).on("click", "img", function(event) {
+    event.preventDefault();
+    var state = $(this).attr("data-state");
+
+    console.dir(this);
+
+    var animateUrl = $(this).attr("data-animate");
+    var stillUrl = $(this).attr("data-still");
+
+    if (state === "still") {
+      $(this).attr("src", animateUrl);
+
+      $(this).attr("data-state", "animate");
+    } else {
+      $(this).attr("src", stillUrl);
+      $(this).attr("data-state", "still");
+    }
+
+    console.dir($(this));
+  });
+
+  $("#add-beach").on("click", function(event) {
+    event.preventDefault();
+    var newBeach = $("input")
+      .eq(0)
+      .val();
+
+    console.dir("beach added" + newBeach);
+  });
 });
-var state = $(this).attr("data-state");
-console.log(this);
-if (state === "still") {
-    $(this).attr("src", $(this).attr("data-animate"));
-    $(this).attr("data-state", "animate");
-} else {
-    $(this).attr("src", $(this).attr("data-still"));
-    $(this).attr("data-state", "still");
-}
