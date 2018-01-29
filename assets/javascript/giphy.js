@@ -51,10 +51,7 @@ $(document).ready(function() {
             // Setting the src attribute of the image to a property pulled off the result item
             beachImage.attr("src", results[i].images.fixed_height.url);
             beachImage.attr("data-animate", results[i].images.fixed_height.url);
-            beachImage.attr(
-              "data-still",
-              results[i].images.fixed_height_still.url
-            );
+            beachImage.attr("data-still", results[i].images.fixed_height_still.url);
             beachImage.attr("data-state", "animate");
 
             // Appending the paragraph and image tag to the beachDiv
