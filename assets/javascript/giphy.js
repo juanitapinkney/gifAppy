@@ -13,7 +13,7 @@ $(document).ready(function() {
   ];
 
   // Adding click event listen listener to all buttons
-  $("button").on("click", function(event) {
+  $(".buttonDiv").on("click", "button", function(event) {
     // Grabbing and storing the data-beach property value from the button
     event.preventDefault();
     var beach = $(this).attr("data-beach");
@@ -22,7 +22,7 @@ $(document).ready(function() {
     var queryURL =
       "http://api.giphy.com/v1/gifs/search?q=" +
       beach +
-      "&api_key=LtNoa2bzwYtqkpZxaDXpeu2arbF0VDx3&&limit=10";
+      "+sands&api_key=LtNoa2bzwYtqkpZxaDXpeu2arbF0VDx3&&limit=10";
 
     // Performing an AJAX request with the queryURL
     $.ajax({
@@ -36,12 +36,11 @@ $(document).ready(function() {
         console.log(response);
         // storing the data from the AJAX request in the results variable
         var results = response.data;
-
+        var beachDiv = $("<div>");
         // Looping through each result item
-        for (var i = 0; i < results.length; i++) {
+        for (var i = 0; i < 10; i++) {
           if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
             // Creating and storing a div tag
-            var beachDiv = $("<div>");
 
             // Creating a paragraph tag with the result item's rating
             var p = $("<p>").text("Rating: " + results[i].rating);
@@ -91,7 +90,12 @@ $(document).ready(function() {
     var newBeach = $("input")
       .eq(0)
       .val();
+    var beachbtn = $("<button>");
+    beachbtn.addClass("addBtn");
+    beachbtn.text(newBeach);
+    beachbtn.attr("data-beach", newBeach);
+    $(".buttonDiv").append(beachbtn);
 
-    console.dir("beach added" + newBeach);
+    console.log("beach added" + newBeach);
   });
 });

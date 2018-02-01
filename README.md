@@ -17,4 +17,4 @@ A form was created to the page, that takes the value from a user input box and a
 
 A function call was created that takes each beach in the array and remakes the buttons on the page.
 
-This app has been deploy to my Github Pages.
+This app has been deployed to my Github Pages.
