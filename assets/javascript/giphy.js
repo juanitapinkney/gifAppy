@@ -22,7 +22,7 @@ $(document).ready(function() {
     var queryURL =
       "http://api.giphy.com/v1/gifs/search?q=" +
       beach +
-      "+sands&api_key=LtNoa2bzwYtqkpZxaDXpeu2arbF0VDx3&&limit=10";
+      "+waves&api_key=LtNoa2bzwYtqkpZxaDXpeu2arbF0VDx3&&limit=10";
 
     // Performing an AJAX request with the queryURL
     $.ajax({
