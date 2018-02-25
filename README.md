@@ -1,6 +1,6 @@
 Welcome to my beach giphy app! A dynamic GIPHY API page that loads gifs of beaches.
 
-https://juanitapinkney.github.io/giphy-app/
+https://juanitapinkney.github.io/gifAppy/
 
 First, an array of strings was created, each one related to a beach and saved it to a variable called `beaches`.
 
